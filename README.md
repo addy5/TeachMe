@@ -14,7 +14,9 @@ Optional Functions :
 * Google map to show location on listing
 * User dashboard to organize, archive, delete requests
 
+As a user I want to be able to easily navigate the websites feature without guessing.
 
+As a teacher, I want to be able to post my listing within 5 minutes of accessing the website.
 
 
 

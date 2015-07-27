@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  root 'users#index'
+  root 'posts#index'
+  get '/about' => 'users#about'
+  resources :messages, only: [:new, :create]
+  resources :posts, only: [:new, :create, :edit, :index]
+  resources :users, only: [:new, :create, :edit, :index]
 
+      # resources :comments, only: :create
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

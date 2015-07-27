@@ -176,13 +176,7 @@ p.about{
   font-weight: normal;
   font-size: 30px;
 }
-
 .messageLine{
   height: 50px;
-  width: 300px;
-}
 
-.messageDetail{
-  width: 80px;
-  display: inline-block;
 }
