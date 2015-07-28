@@ -6,7 +6,7 @@
   <link href='http://fonts.googleapis.com/css?family=Mr+Bedfort' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Chewy' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
-  <title>Feeney</title>
+  <title>TeachMe</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -18,8 +18,13 @@
     <li class='header'><a href="/">Main</a></li>
     <li class='header'><a href="/about">About</a></li>
     <li class='header'><a href="/messages/new">Contact Us</a></li>
+    <% if current_user %>
+    <li class='header'>My Dashboard</li>
+    <li class='header'><a href="/logout" data-method="delete" rel="nofollow">Log out</li>
+    <% else %>
     <li class='header'><a href="/sessions/new">Log In</a></li>
     <li class='header'><a href="/users/new">Sign Up</a></li>
+    <% end %>
   </ul>
 
 <%= yield %>
