@@ -1,0 +1,21 @@
+<div class="container">
+
+  <h1 class='title'>My <span class='logoM'>D</span>ashboard</h1>
+    <h1 class='about'>"Believe in yourself. Dream. Try. Do good."</h1>
+
+  <p style="font-size: 20px; font-weight:bold; position:relative; left:-320px; margin: 10px 10px;"> My Listings</p>
+  <div class="dashLeft" style="width:235px;height:400px;border:1px solid grey; margin:10px 10px;">
+
+  <% @user.posts.all.each do |p| %>
+      <div class="listingContainer" style="border:1px solid grey; margin:12px 12px; height: 50px; padding-top: 12px; font-weight: bold;">
+
+        <p> <%= p.title.capitalize %> </p>
+        <p> <%= p.rate %> </p>
+        <p> <%= p.city %> </p>
+
+      </div>
+      <% end %>
+      <a href="#" style="display: inline-block; height:35px; width:150px; background-color:orange; border-radius:4px; line-height: 35px; margin: 10px auto;">Create New Post</a>
+  </div>
+
+</div>

@@ -2,10 +2,10 @@ Rails.application.routes.draw do
 
   root 'posts#index'
   get '/about' => 'users#about'
-	delete '/logout' => 'sessions#destroy'  
+	delete '/logout' => 'sessions#destroy'
   resources :messages, only: [:new, :create]
   resources :posts, only: [:new, :create, :edit, :index]
-  resources :users, only: [:new, :create, :edit, :index]
+  resources :users, only: [:new, :create, :edit, :index, :show]
   resources :sessions, only: [:new, :create, :destroy]
 
       # resources :comments, only: :create

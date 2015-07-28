@@ -29,7 +29,7 @@ ul{
 
 #coverPic{
   height: 260px;
-  background-image: url('http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg');
+  background-image: url('mainPic.jpg');
   background-size: cover;
   text-align: center;
 }
@@ -257,4 +257,27 @@ div.message{
 .signButton.new{
   width: 150px;
   position: relative;
+}
+
+.notice{
+  height: 30px;
+  background-color: red;
+  color:white;
+  opacity: 0.75;
+  display: none;
+  line-height: 30px
+}
+
+.loggedIn, .newUser{
+  height: 30px;
+  background-color: green;
+  color:white;
+  opacity: 0.75;
+  display: none;
+  line-height: 30px
+}
+
+.logLink{
+  font-weight: bold;
+  color:blue;
 }

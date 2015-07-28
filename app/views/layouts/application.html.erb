@@ -14,13 +14,20 @@
 
 <body>
 
+  <% flash.each do |name, msg| -%>
+    <% if name == "newUser" %>
+    <%= content_tag :div, sanitize(msg), class: name %>
+    <% else %>
+    <%= content_tag :div, msg, class: name %>
+    <% end %>
+  <% end %>
   <ul class='header'>
     <li class='header'><a href="/">Main</a></li>
     <li class='header'><a href="/about">About</a></li>
     <li class='header'><a href="/messages/new">Contact Us</a></li>
     <% if current_user %>
-    <li class='header'>My Dashboard</li>
-    <li class='header'><a href="/logout" data-method="delete" rel="nofollow">Log out</li>
+    <li class='header'><a href="/users/<%=session[:user_id]%>">My Dashboard</a></li>
+    <li class='header'><a href="/logout" data-method="delete" rel="nofollow">Log out</a></li>
     <% else %>
     <li class='header'><a href="/sessions/new">Log In</a></li>
     <li class='header'><a href="/users/new">Sign Up</a></li>
