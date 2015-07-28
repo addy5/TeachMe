@@ -1,15 +1,21 @@
-<div class="container">
-
 <h1 class='title'><span class='regularFont'>Contact </span>Teach<span class='logoM'>M</span>e:</h1>
 
+<div class="container">
+
+<div class="container message contact">
+
 <%= form_for @message do |f| %>
-<div class='messageLine'><p class='messageDetail'>Name: </p><%= f.text_field :name%></div>
-<div class='messageLine'><p class='messageDetail'>Phone: </p><%= f.text_field :phone%></div>
-<div class='messageLine'><p class='messageDetail'>Email: </p><%= f.text_field :email%></div>
-<div class='messageLine'><p class='messageDetail'>Subject: </p><%= f.text_field :subject%></div>
-<div class='messageLine'><p class='messageDetail'>Message: </p><%= f.text_area :message%></div>
-<div class='messageLine'> <p class='messageDetail'><%= f.submit "Send Message"%></div>
+<div class='messageLine first'><p class='messageDetail'>Name: </p><%= f.text_field :name, :class => 'messageField'%></div>
+<div class='messageLine'><p class='messageDetail'>Phone: </p><%= f.text_field :phone, :class => 'messageField'%></div>
+<div class='messageLine'><p class='messageDetail'>Email: </p><%= f.text_field :email, :class => 'messageField'%></div>
+<div class='messageLine'><p class='messageDetail'>Subject: </p><%= f.text_field :subject, :class => 'messageField'%></div>
+<div class='messageLine'><p class='messageDetail'>Message: </p><%= f.text_area :message, :class => 'messageBody' %></div>
+<div class='messageLine'> <p class='messageDetail'><%= image_submit_tag("submit.png", :alt => "submit form", :class => 'submitButton') %></div>
 
 <% end %>
+
+</div>
+
+
 
 </div>

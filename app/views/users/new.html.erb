@@ -1,2 +1,15 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class="container message">
+
+<h1 class='title'><span class='regularFont'>Sign up with </span>Teach<span class='logoM'>M</span>e!</h1>
+
+<%= form_for @user do |f| %>
+
+<div class='messageLine signup first'><p class='messageDetail signup'>First Name: </p><%= f.text_field :first_name, :class => 'messageField'%></div>
+<div class='messageLine signup'><p class='messageDetail signup'>Last Name: </p><%= f.text_field :last_name, :class => 'messageField signup'%></div>
+<div class='messageLine signup'><p class='messageDetail signup'>Email: </p><%= f.text_field :email, :class => 'messageField signup'%></div>
+<div class='messageLine signup'><p class='messageDetail signup'>Password: </p><%= f.password_field :password, :class => 'messageField signup'%></div>
+<div class='messageLine signup'><%= f.submit "Sign Up", :class => "signButton" %></div>
+
+<% end %>
+
+</div>

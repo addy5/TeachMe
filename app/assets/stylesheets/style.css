@@ -176,7 +176,78 @@ p.about{
   font-weight: normal;
   font-size: 30px;
 }
+
+div.message{
+  min-height: 520px;
+  width: 500px;
+}
+
 .messageLine{
   height: 50px;
+  width: 500px;
+}
 
+.messageDetail{
+  font-size: 22px;
+  height: 50px;
+  width: 80px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 40px;
+  text-align: left;
+}
+
+.messageBody {
+  width:300px;
+  height: 150px;
+}
+
+.messageField {
+  width:300px;
+  height:20px;
+}
+
+.submitButton{
+  height:50px;
+  position: relative;
+  left:110px;
+  top: 130px;
+}
+
+.messageDetail.signup{
+  font-size: 25px;
+  height: 50px;
+  width: 130px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 40px;
+  text-align: left;
+}
+
+.messageLine.signup{
+  margin: 0 auto;
+}
+
+.messageLine.first{
+  margin-top:40px;
+}
+
+.container.message.contact{
+  border: 1px solid grey;
+  margin: 20px 0;
+  margin-left: 30px;
+  background-color: #F1F1F1;
+  border-radius: 6px;
+}
+
+.container .messageLine input {
+    font-size: 18px;
+}
+
+.signButton{
+  width: 80px;
+  background-color: orange;
+  font-size: 20px;
+  color:black;
+  border-radius: 5px;
 }
