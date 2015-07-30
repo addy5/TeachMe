@@ -8,16 +8,15 @@
 
 <div class ='container'>
   <% @posts.each do |p|%>
-
+    <a href="/posts/<%= p.id %>">
     <div class="indexListing">
-      <a href="/posts/<%= p.id %>">
-        <h6><%=p.title.capitalize%></h6>
-        <img src="<%=p.profile_url %>" alt="" />
-        <p>With tutor: <%= p.user.first_name%></p>
-        <p>In: <%= p.city%></p>
-      </a>
-    </div>
+      <div class="indexImage" style="background-image: url('<%= p.profile_url %>'); background-size: cover; background-repeat: no-repeat;">
 
+      </div>
+    <h6><%=p.title.capitalize%></h6>
+    <p>With tutor: <%= p.user.first_name%></p>
+  </div>
+    </a>
   <% end %>
 
 </div>
