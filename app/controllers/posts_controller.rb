@@ -49,6 +49,26 @@ class PostsController < ApplicationController
     end
   end
 
+  def search
+    @query = params[:query]
+    @posts = Post.all
+    @match = []
+
+    @posts.each do |p|
+      array = []
+      p.title.split(/[\s,]+/).each {|w| array.push(w.downcase)}
+      p.body.split(/[\s,]+/).each {|w| array.push(w.downcase)}
+      p.city.split(/[\s,]+/).each {|w| array.push(w.downcase)}
+      p.user.first_name.split(/[\s,]+/).each {|w| array.push(w.downcase)}
+      @query.split(/[\s,]+/).each do |m|
+        @match.push(p.id) if array.include?(m.downcase)
+      end
+    end
+    @match.uniq!
+
+
+  end
+
   private
     def post_params
       params.require(:post).permit(:title, :rate, :city, :profile_url, :body)

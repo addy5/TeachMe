@@ -13,16 +13,20 @@
     <% end %>
 </div>
 
-<div class ='container'>
+<p style="font-weight:bold; font-size:22px; margin-top:30px;">Search Results:</p>
 
-  <% @posts.each do |p|%>
-    <a href="/posts/<%= p.id %>">
+<div class ='container'>
+  <% unless @match.any? %>
+    <p style="margin: 20px auto; min-height:80px;"> No listings match the search parameters</p>
+  <% end %>
+  <% @match.each do |p|%>
+    <a href="/posts/<%= p %>">
     <div class="indexListing">
-      <div class="indexImage" style="background-image: url('<%= p.profile_url %>'); background-size: cover; background-repeat: no-repeat;">
+      <div class="indexImage" style="background-image: url('<%= Post.find(p).profile_url %>'); background-size: cover; background-repeat: no-repeat;">
 
       </div>
-    <h6><%=p.title.capitalize%></h6>
-    <p>With tutor: <%= p.user.first_name%></p>
+    <h6> <%=Post.find(p).title.capitalize%> </h6>
+    <p> With tutor: <%= Post.find(p).user.first_name%> </p>
   </div>
     </a>
   <% end %>

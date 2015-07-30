@@ -8,7 +8,9 @@
 <hr style="margin-left:3%; width: 93%">
     <div class="messageBox" style="text-align: left;">
 
-    <p style="font-size: 17px; font-weight:normal; position:relative; margin: 15px 7%; margin-top:25px;"> <span style="font-weight:bold;">From:</span> <%= @request.user.first_name%> <%= @request.user.last_name%></p>
+    <p style="font-size: 17px; font-weight:normal; position:relative; margin: 15px 7%; margin-top:25px;"> <span style="font-weight:bold;">To:</span> <%= @request.post.user.first_name%> <%= @request.post.user.last_name%></p>
+
+    <p style="font-size: 17px; font-weight:normal; position:relative; margin: 15px 7%;"> <span style="font-weight:bold;">From:</span> <%= @request.user.first_name%> <%= @request.user.last_name%></p>
 
     <p style="font-size: 17px; font-weight:normal; position:relative; margin: 15px 7%;"> <span style="font-weight:bold;">Email:</span> <%= @request.user.email %></p>
 
