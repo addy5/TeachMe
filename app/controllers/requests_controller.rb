@@ -9,7 +9,7 @@ class RequestsController < ApplicationController
     @request = Request.new(req_params)
     @request.update(post_id: params[:post_id], user_id: session[:user_id])
     if @request.save
-    redirect_to "/"
+    redirect_to "/users/#{session[:user_id]}"
     end
   end
 
@@ -19,8 +19,12 @@ class RequestsController < ApplicationController
   def destroy
     @request = Request.find(params[:id])
     if @request.destroy
-      redirect_to "/"
+      redirect_to user_path
     end
+  end
+
+  def show
+    @request = Request.find(params[:id])
   end
 
 private
