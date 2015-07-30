@@ -1,15 +1,57 @@
 class PostsController < ApplicationController
   def index
-      @users = User.all
-      @posts = Post.all
+    @posts = Post.all
   end
 
   def new
+    @post = Post.new
   end
 
   def create
+    @post = Post.new(post_params)
+    @post.assign_attributes(:user_id => session[:user_id])
+    @city = :city
+    @post.assign_attributes(:map_url => "https://maps.googleapis.com/maps/api/staticmap?center=#{@post.city}&zoom=11&size=300x200")
+    if @post.save
+      flash[:newUser] = "Post: #{@post.title} successfully created"
+      redirect_to "/posts/#{@post.id}"
+    else
+      render "/posts/new"
+    end
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      @post.update(:map_url => "https://maps.googleapis.com/maps/api/staticmap?center=#{@post.city}&zoom=11&size=300x200")
+      flash[:newUser] = "Post: #{@post.title} successfully updated"
+      redirect_to "/posts/#{@post.id}"
+    else
+      flash[:notice] = "Post: #{@post.title} was not successfully updated. Missing Parameters"
+      redirect_to "/posts/#{@post.id}"
+    end
+  end
+
+  def show
+    @post = Post.find(params[:id])
+  end
+
+
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      flash[:newUser] = "Post: #{@post.title} successfully deleted"
+      redirect_to "/posts"
+    end
+  end
+
+  private
+    def post_params
+      params.require(:post).permit(:title, :rate, :city, :profile_url, :body)
+    end
+
 end

@@ -7,15 +7,19 @@
   <div class="dashLeft" style="width:235px;height:400px;border:1px solid grey; margin:10px 10px;">
 
   <% @user.posts.all.each do |p| %>
-      <div class="listingContainer" style="border:1px solid grey; margin:12px 12px; height: 50px; padding-top: 12px; font-weight: bold;">
-
+      <div class="listingContainer" style="border:1px solid grey; margin:12px 12px; height: 50px; padding-top: 12px; font-weight: bold; background-color:#D4CFCF;">
+        <a href="/posts/<%=p.id%>">
         <p> <%= p.title.capitalize %> </p>
-        <p> <%= p.rate %> </p>
         <p> <%= p.city %> </p>
-
+        </a>
       </div>
-      <% end %>
-      <a href="#" style="display: inline-block; height:35px; width:150px; background-color:orange; border-radius:4px; line-height: 35px; margin: 10px auto;">Create New Post</a>
+  <% end %>
+
+  <% if @user.posts.empty? %>
+      <p style="margin: 10px auto;">You have no listings at this time</p>
+  <% end %>
+
+      <a href="/posts/new" style="display: inline-block; height:35px; width:150px; background-color:orange; border-radius:4px; line-height: 35px; margin: 10px auto;">Create New Post</a>
   </div>
 
 </div>

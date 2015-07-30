@@ -10,10 +10,12 @@
   <% @posts.each do |p|%>
 
     <div class="indexListing">
-      <h6><%=p.title.capitalize%></h6>
-      <img src="<%=p.profile_url %>" alt="" />
-      <p>With tutor: <%= p.user.first_name%></p>
-      <p>In: <%= p.city%></p>
+      <a href="/posts/<%= p.id %>">
+        <h6><%=p.title.capitalize%></h6>
+        <img src="<%=p.profile_url %>" alt="" />
+        <p>With tutor: <%= p.user.first_name%></p>
+        <p>In: <%= p.city%></p>
+      </a>
     </div>
 
   <% end %>

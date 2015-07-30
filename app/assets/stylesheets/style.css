@@ -127,7 +127,7 @@ li.first{
 }
 
 .indexListing{
-  border: 1px solid grey;
+  border: 2px solid #486D84;
   border-radius: 5px;
   /*border-top-right-radius: 10px;*/
   width: 250px;
@@ -163,6 +163,7 @@ h3.about{
   font-size: 23px;
   text-align: left;
   margin: 5px 0;
+  color: #486D84;
 }
 
 p.about{
@@ -175,6 +176,15 @@ p.about{
   font-family: 'Arimo', sans-serif;
   font-weight: normal;
   font-size: 30px;
+}
+
+.containerRight{
+  display:inline-block;
+  width: 400px;
+}
+
+.aboutMap{
+  height: 250px;
 }
 
 div.message{
@@ -193,13 +203,14 @@ div.message{
   width: 80px;
   display: inline-block;
   vertical-align: top;
-  margin-right: 40px;
+  margin-right: 20px;
   text-align: left;
 }
 
 .messageBody {
   width:300px;
   height: 150px;
+  font-size: 15px;
 }
 
 .messageField {
@@ -215,17 +226,22 @@ div.message{
 }
 
 .messageDetail.signup{
-  font-size: 25px;
+  font-size: 23px;
   height: 50px;
-  width: 130px;
+  width: 120px;
   display: inline-block;
   vertical-align: top;
-  margin-right: 40px;
+  margin-right: 20px;
   text-align: left;
 }
 
 .messageLine.signup{
   margin: 0 auto;
+}
+
+.messageLine.newPost{
+  position: relative;
+  top:120px;
 }
 
 .messageLine.first{
@@ -235,9 +251,9 @@ div.message{
 .container.message.contact{
   border: 1px solid grey;
   margin: 20px 0;
-  margin-left: 30px;
   background-color: #F1F1F1;
   border-radius: 6px;
+  display: inline-block;
 }
 
 .container .messageLine input {

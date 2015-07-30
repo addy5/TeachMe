@@ -1,2 +1,19 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<div class="container message">
+
+<h1 class='title'><span class='regularFont'>Create New Post @ </span>Teach<span class='logoM'>M</span>e!</h1>
+
+<%= form_for @post do |f| %>
+
+<div class='messageLine signup first'><p class='messageDetail signup'>Title: </p><%= f.text_field :title, :class => 'messageField'%></div>
+<div class='messageLine signup'><p class='messageDetail signup'>Rate: </p><%= f.text_field :rate, :class => 'messageField signup'%></div>
+<div class='messageLine signup'><p class='messageDetail signup'>City: </p><%= f.text_field :city, :class => 'messageField signup'%></div>
+<div class='messageLine signup'><p class='messageDetail signup' style="font-size:20px;">Profile URL: </p><%= f.text_field :profile_url, :class => 'messageField signup'%></div>
+
+
+
+<div class='messageLine signup'><p class='messageDetail signup'>Description: </p><%= f.text_area :body, :class => 'messageBody signup'%></div>
+<div class='messageLine newPost'><%= f.submit "Create Post", :class => "signButton new" %></div>
+
+<% end %>
+
+</div>

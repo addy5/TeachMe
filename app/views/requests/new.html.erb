@@ -1,0 +1,18 @@
+
+<div class="container message">
+
+<h1 class='title'><span class='regularFont'>Create Request @</span>Teach<span class='logoM'>M</span>e!</h1>
+
+<%= @post %>
+
+<%= form_for @request, url: post_requests_path do |f| %>
+  <div class='messageLine signup'>
+      <p class='messageDetail signup'>Message:</p>
+      <%= f.text_field :message %>
+  </div>
+
+<%= f.submit "Send Request", :class => "signButton" %>
+
+<% end %>
+
+</div>

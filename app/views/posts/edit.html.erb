@@ -1,2 +1,24 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<div class="container message">
+
+<h1 class='title'><span class='regularFont'>Edit your <%=@post.title%> Post @  </span>Teach<span class='logoM'>M</span>e!</h1>
+
+<%= form_for @post do |f| %>
+
+<div class='messageLine signup first'><p class='messageDetail signup'>Title: </p><%= f.text_field :title, :class => 'messageField'%></div>
+<div class='messageLine signup'><p class='messageDetail signup'>Rate: </p><%= f.text_field :rate, :class => 'messageField signup'%></div>
+<div class='messageLine signup'><p class='messageDetail signup'>City: </p><%= f.text_field :city, :class => 'messageField signup'%></div>
+<div class='messageLine signup'><p class='messageDetail signup' style="font-size:20px;">Profile URL: </p><%= f.text_field :profile_url, :class => 'messageField signup'%></div>
+
+
+
+<div class='messageLine signup'><p class='messageDetail signup'>Description: </p><%= f.text_area :body, :class => 'messageBody signup'%></div>
+<div class='messageLine newPost'>
+  <%= f.submit "Edit Post", :class => "signButton new" %>
+  <a href="/posts/<%=@post.id%>" data-method="delete" rel="nofollow" style = "width: 100px; height: 30px; background-color: red; display: inline-block; vertical-align: top; border-radius: 5px; position: relative; left: 100px; line-height:30px; font-size:15px; ">Delete Post</a>
+</div>
+
+
+
+<% end %>
+
+</div>
