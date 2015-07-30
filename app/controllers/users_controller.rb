@@ -18,6 +18,18 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:newUser] = "Account information successfully updated."
+      redirect_to "/users/#{params[:id]}"
+    else
+      flash[:notice] = "There was an issue, account information was not updated."
+      redirect_to "/users/#{params[:id]}/edit"
+    end
   end
 
   def show

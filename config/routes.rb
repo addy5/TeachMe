@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :posts, only: [:new, :create, :update, :edit, :index, :show, :destroy] do
     resources :requests, only: [:new, :create, :destroy, :show]
   end
-  resources :users, only: [:new, :create, :edit, :index, :show]
+  resources :users, only: [:new, :create, :edit, :update, :index, :show]
   resources :sessions, only: [:new, :create, :destroy]
 
 
