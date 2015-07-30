@@ -4,15 +4,23 @@
     <h1 class='about'>"Believe in yourself. Dream. Try. Do good."</h1>
 
 
-  <div class="dashLeft" style="width:235px;min-height:400px;border:1px solid grey; margin:10px 10px; display: inline-block; vertical-align: top;">
+  <div class="dashLeft" style="width:780px;min-height:400px;border:1px solid grey; margin:10px 10px; display: inline-block; vertical-align: top;">
   <p style="font-size: 20px; font-weight:bold; position:relative; margin: 10px 10px;"> My Listings</p>
 
   <% @user.posts.all.each do |p| %>
-      <div class="listingContainer" style="border:1px solid grey; margin:12px 12px; height: 50px; padding-top: 12px; font-weight: bold; background-color:#D4CFCF;">
+      <div class="listingContainer" style="border:1px solid grey; margin:12px 12px; height: 50px; padding-top: 12px; font-weight: bold; background-color:#D4CFCF; text-align: left;">
         <a href="/posts/<%=p.id%>">
-        <p> <%= p.title.capitalize %> </p>
-        <p> <%= p.city %> </p>
+        <p style="margin-left:5px;"> <%= p.title.capitalize %>  - <%= p.city %> </p>
         </a>
+        <hr style="margin-left:5px;">
+
+        <% p.requests.all.each do |v| %>
+          <% unless v == nil %>
+          <p style="margin-left: 5px; font-size: 15px;line-height: 10px;">
+            <%= v.user.first_name %> (<%= v.user.email %>) sent a request for your lesson.
+          </p>
+          <% end %>
+        <% end %>
       </div>
   <% end %>
 
@@ -23,23 +31,6 @@
       <a href="/posts/new" style="display: inline-block; height:35px; width:150px; background-color:orange; border-radius:4px; line-height: 35px; margin: 10px auto;">Create New Post</a>
   </div>
 
-  <div class="dashCenter" style="width:235px;min-height:400px; border:1px solid grey; margin:10px 10px; display: inline-block; vertical-align: top;">
-  <p style="font-size: 20px; font-weight:bold; position:relative; margin: 10px 10px;"> Request from other Users </p>
-
-  <% @user.posts.each do |n| %>
-      <% n.requests.each do |v|%>
-      <div class="listingContainer" style="border:1px solid grey; margin:12px 12px; height: 50px; padding-top: 12px; font-weight: bold; background-color:#D4CFCF;">
-        <p> <%= v.post.title.capitalize %> </p>
-        <p> <%= v.post.city %> </p>
-      </div>
-      <% end %>
-  <% end %>
-
-  <% if @user.posts.empty? %>
-      <p style="margin: 10px auto;">You have no request from other users at this time</p>
-  <% end %>
-
-  </div>
 
   <div class="dashRight" style="width:235px;min-height:400px; border:1px solid grey; margin:10px 10px; display: inline-block; vertical-align: top;">
   <p style="font-size: 20px; font-weight:bold; position:relative; margin: 10px 10px;"> My Requests </p>
