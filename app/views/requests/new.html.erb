@@ -8,7 +8,7 @@
 <%= form_for @request, url: post_requests_path do |f| %>
   <div class='messageLine signup'>
       <p class='messageDetail signup' style="margin-right:0; margin-top:30px;">Message:</p>
-      <%= f.text_area :message, :class => 'messageBody', :style => "margin-top:30px; font-size:20px;" %>
+      <%= f.text_area :message, :required => true, :class => 'messageBody', :style => "margin-top:30px; font-size:20px;" %>
   </div>
 
 <%= f.submit "Send Request", :class => "signButton", :style => "width:150px; position:relative; top:160px;" %>

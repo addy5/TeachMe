@@ -8,7 +8,7 @@
 
 <div style="display:inline-block; width:230px; height:20px; vertical-align:top; margin-top: 16px">
     <%= form_tag("/posts/search", method: "get") do %>
-      <%= text_field_tag :query,nil, :placeholder => "enter subject / location", :style => "height:27px; width: 150px; text-align:center;" %>
+      <%= text_field_tag :query,nil, :placeholder => "enter subject / location", :style => "height:27px; width: 150px; text-align:center; font-size:13px;" %>
       <%= submit_tag "Search", :style => "height: 24px; font-size:24px;" %>
     <% end %>
 </div>

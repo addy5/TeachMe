@@ -10,17 +10,20 @@
   <% @user.posts.all.each do |p| %>
       <div class="listingContainer" style="border:1px solid grey; margin:12px 12px; min-height: 60px; padding-top: 12px; font-weight: bold; background-color:#D4CFCF; text-align: left;">
         <a href="/posts/<%=p.id%>" style="font-size:18px; color:#486D84;">
-        <p style="margin-left:5px;"> <%= p.title.capitalize %>  - <%= p.city %> </p>
+          <p style="margin-left:5px;">
+            <%= p.title.capitalize %>  - <%= p.city %>
+          </p>
         </a>
-        <hr style="margin-left:5px;">
+
+      <hr style="margin-left:5px;">
 
         <% p.requests.all.each do |v| %>
           <% unless v == nil %>
-          <p style="margin:15px 0; margin-left: 5px; font-size: 17px;line-height: 17px; position: relative;">
+            <p style="margin:15px 0; margin-left: 5px; font-size: 17px;line-height: 17px; position: relative;">
             <%= v.user.first_name %> (<%= v.user.email %>) sent a request for your lesson.
             <a href="/posts/<%=v.post_id%>/requests/<%=v.id%>" style="margin-left: 5px; font-size: 17px;line-height: 17px; color:blue; position: absolute; right: 90px;">View</a>
             <a href="/posts/<%=v.post_id%>/requests/<%=v.id%>" data-method='delete' style="margin-left: 5px; font-size: 17px;line-height: 17px; color:blue; position: absolute; right: 20px;">Delete</a>
-          </p>
+            </p>
 
           <% end %>
 
@@ -43,18 +46,21 @@
   <% @user.requests.all.each do |r| %>
       <div class="listingContainer" style="border:1px solid grey; margin:12px 12px; min-height: 60px; padding-top: 12px; font-weight: bold; background-color:#D4CFCF; text-align: left;">
         <a href="/posts/<%= r.post_id %>" style="font-size:18px; color:#486D84;">
-        <p style="margin-left:5px;"> <%= r.post.title.capitalize %>  - <%= r.post.city %> </p>
+          <p style="margin-left:5px;">
+            <%= r.post.title.capitalize %>  - <%= r.post.city %>
+          </p>
         </a>
-        <hr style="margin-left:5px;">
 
-          <% unless r == nil %>
+      <hr style="margin-left:5px;">
+
+        <% unless r == nil %>
           <p style="margin:15px 0; margin-left: 5px; font-size: 17px;line-height: 17px; position: relative;">
             You sent a request to: <%= r.post.user.first_name %>
             <a href="/posts/<%=r.post_id%>/requests/<%=r.id%>" style="margin-left: 5px; font-size: 17px;line-height: 17px; color:blue; position: absolute; right: 90px;">View</a>
             <a href="/posts/<%=r.post_id%>/requests/<%=r.id%>" data-method='delete' style="margin-left: 5px; font-size: 17px;line-height: 17px; color:blue; position: absolute; right: 20px;">Delete</a>
           </p>
 
-        <% end %>
+          <% end %>
       </div>
   <% end %>
 

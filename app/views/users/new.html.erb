@@ -4,11 +4,28 @@
 
 <%= form_for @user do |f| %>
 
-<div class='messageLine signup first'><p class='messageDetail signup'>First Name: </p><%= f.text_field :first_name, :class => 'messageField'%></div>
-<div class='messageLine signup'><p class='messageDetail signup'>Last Name: </p><%= f.text_field :last_name, :class => 'messageField signup'%></div>
-<div class='messageLine signup'><p class='messageDetail signup'>Email: </p><%= f.text_field :email, :class => 'messageField signup'%></div>
-<div class='messageLine signup'><p class='messageDetail signup'>Password: </p><%= f.password_field :password, :class => 'messageField signup'%></div>
-<div class='messageLine signup'><%= f.submit "Create Account", :class => "signButton new" %></div>
+      <div class='messageLine signup first'>
+        <p class='messageDetail signup'>First Name: </p>
+        <%= f.text_field :first_name, :class => 'messageField'%>
+      </div>
+
+      <div class='messageLine signup'>
+        <p class='messageDetail signup'>Last Name: </p>
+        <%= f.text_field :last_name, :class => 'messageField signup'%>
+      </div>
+
+      <div class='messageLine signup'>
+        <p class='messageDetail signup'>Email: </p>
+        <%= f.text_field :email, :class => 'messageField signup'%>
+      </div>
+
+      <div class='messageLine signup'><p class='messageDetail signup'>Password: </p>
+        <%= f.password_field :password, :class => 'messageField signup'%>
+      </div>
+
+      <div class='messageLine signup'>
+        <%= f.submit "Create Account", :class => "signButton new" %>
+      </div>
 
 <% end %>
 

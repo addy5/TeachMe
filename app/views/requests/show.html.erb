@@ -14,7 +14,7 @@
 
     <p style="font-size: 17px; font-weight:normal; position:relative; margin: 15px 7%;"> <span style="font-weight:bold;">Email:</span> <%= @request.user.email %></p>
 
-    <p style="font-size: 17px; font-weight:normal; position:relative; margin: 15px 7%;"> <span style="font-weight:bold;">Subject:</span>  Your tutoring lesson: <%= @request.post.title%> </p>
+    <p style="font-size: 17px; font-weight:normal; position:relative; margin: 15px 7%;"> <span style="font-weight:bold;">Subject:</span>  Your tutoring lesson: <%= @request.post.title.capitalize %>  in <%= @request.post.city %></p>
 
     <p style="font-size: 17px; font-weight:normal; position:relative; margin: 15px 7%;"> <span style="font-weight:bold;">Message:</span> <p style="font-size: 17px; font-weight:normal; position:relative; margin: 15px 7%;"> Hi, <br>
     <%= @request.message %> </p>

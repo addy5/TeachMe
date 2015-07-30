@@ -31,7 +31,7 @@ class PostsController < ApplicationController
       flash[:newUser] = "Post: #{@post.title} successfully updated"
       redirect_to "/posts/#{@post.id}"
     else
-      flash[:notice] = "Post: #{@post.title} was not successfully updated. Missing Parameters"
+      flash[:notice] = "Post: #{@post.title} was not successfully updated. Missing parameters."
       redirect_to "/posts/#{@post.id}"
     end
   end
@@ -43,6 +43,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    @post.requests.all.each {|r| r.destroy}
     if @post.destroy
       flash[:newUser] = "Post: #{@post.title} successfully deleted"
       redirect_to "/posts"

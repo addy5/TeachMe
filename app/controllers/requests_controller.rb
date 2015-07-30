@@ -9,7 +9,10 @@ class RequestsController < ApplicationController
     @request = Request.new(req_params)
     @request.update(post_id: params[:post_id], user_id: session[:user_id])
     if @request.save
-    redirect_to "/users/#{session[:user_id]}"
+      redirect_to "/users/#{session[:user_id]}"
+      flash[:newUser] = "Request for: #{@request.post.title} successfully submitted"
+    else
+      render "/posts/<%=params[:post_id]%>/requests/new"
     end
   end
 
