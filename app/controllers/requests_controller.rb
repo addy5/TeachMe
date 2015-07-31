@@ -3,20 +3,22 @@ class RequestsController < ApplicationController
   def new
     @request = Request.new
     @post = params[:post_id]
-    unless session[:user_id]
-      flash[:notice1] = "You must be logged in to submit a request."
-      redirect_to "/posts/#{params[:post_id]}"
-    end
   end
 
   def create
     @request = Request.new(req_params)
     @request.update(post_id: params[:post_id], user_id: session[:user_id])
-    if @request.save
-      redirect_to "/users/#{session[:user_id]}"
-      flash[:newUser] = "Request for: #{@request.post.title} successfully submitted"
+    if session[:user_id]
+      if @request.save
+        redirect_to "/users/#{session[:user_id]}"
+        flash[:newUser] = "Request for: #{@request.post.title} successfully submitted"
+      else
+        render "/posts/<%=params[:post_id]%>/requests/new"
+        flash[:notice] = "Error. Request was not submitted"
+      end
     else
-      render "/posts/<%=params[:post_id]%>/requests/new"
+      flash[:notice] = "You must be logged in to submit a request."
+      redirect_to "/posts/#{params[:post_id]}"
     end
   end
 

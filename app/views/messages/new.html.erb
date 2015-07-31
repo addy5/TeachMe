@@ -7,27 +7,27 @@
       <%= form_for @message do |f| %>
       <div class='messageLine contact first'>
         <p class='messageDetail contact'>Name: </p>
-        <%= f.text_field :name, :class => 'messageField contact'%>
+        <%= f.text_field :name, :required => true, :class => 'messageField contact'%>
       </div>
 
       <div class='messageLine contact'>
         <p class='messageDetail contact'>Phone: </p>
-        <%= f.text_field :phone, :class => 'messageField contact'%>
+        <%= f.text_field :phone, :required => true, :class => 'messageField contact'%>
       </div>
 
       <div class='messageLine contact'>
       <p class='messageDetail contact'>Email: </p>
-      <%= f.text_field :email, :class => 'messageField contact'%>
+      <%= f.text_field :email, :required => true, :class => 'messageField contact'%>
       </div>
 
       <div class='messageLine contact'>
         <p class='messageDetail contact'>Subject: </p>
-        <%= f.text_field :subject, :class => 'messageField contact'%>
+        <%= f.text_field :subject, :required => true, :class => 'messageField contact'%>
       </div>
 
       <div class='messageLine contact'>
         <p class='messageDetail contact'>Message: </p>
-        <%= f.text_area :message, :class => 'messageBody contact' %>
+        <%= f.text_area :message, :required => true, :class => 'messageBody contact' %>
       </div>
 
       <div class='messageLine contact'>
