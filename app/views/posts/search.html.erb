@@ -4,12 +4,12 @@
   </p>
 </div>
 
-<h1 class='title' style="display:inline-block; width: 145px;">Teach<span class='logoM'>M</span>e:</h1>
+<h1 class='title' style="display:inline-block; width: 130px;">Teach<span class='logoM'>M</span>e:</h1>
 
-<div style="display:inline-block; width:230px; height:20px; vertical-align:top; margin-top: 16px">
+<div style="display:inline-block; width:230px; height:20px; vertical-align:top; margin-top: 14px">
     <%= form_tag("/posts/search", method: "get") do %>
       <%= text_field_tag :query,nil, :placeholder => "enter subject / location", :style => "height:27px; width: 150px; text-align:center;" %>
-      <%= submit_tag "Search", :style => "height: 24px; font-size:24px;" %>
+      <%= image_submit_tag("Search.png", :name => 'filter', :style => "width:28px; vertical-align: top;") %>
     <% end %>
 </div>
 

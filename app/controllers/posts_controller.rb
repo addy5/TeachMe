@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.all.shuffle
   end
 
   def new
@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.assign_attributes(:user_id => session[:user_id])
-    @city = :city
+    # @city = :city
     @post.assign_attributes(:map_url => "https://maps.googleapis.com/maps/api/staticmap?center=#{@post.city}&zoom=11&size=300x200")
     if @post.save
       flash[:newUser] = "Post: #{@post.title} successfully created"

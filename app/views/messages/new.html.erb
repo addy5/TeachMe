@@ -3,30 +3,54 @@
 <div class="container">
 
   <div class="container message contact">
-  <h3>Contact Form</h3>
-  <%= form_for @message do |f| %>
-  <div class='messageLine first'><p class='messageDetail'>Name: </p><%= f.text_field :name, :class => 'messageField'%></div>
-  <div class='messageLine'><p class='messageDetail'>Phone: </p><%= f.text_field :phone, :class => 'messageField'%></div>
-  <div class='messageLine'><p class='messageDetail'>Email: </p><%= f.text_field :email, :class => 'messageField'%></div>
-  <div class='messageLine'><p class='messageDetail'>Subject: </p><%= f.text_field :subject, :class => 'messageField'%></div>
-  <div class='messageLine'><p class='messageDetail'>Message: </p><%= f.text_area :message, :class => 'messageBody' %></div>
-  <div class='messageLine'> <p class='messageDetail'><%= image_submit_tag("submit.png", :alt => "submit form", :class => 'submitButton') %></div>
+  <h3 class="contactHeader">Contact Form</h3>
+      <%= form_for @message do |f| %>
+      <div class='messageLine contact first'>
+        <p class='messageDetail contact'>Name: </p>
+        <%= f.text_field :name, :class => 'messageField contact'%>
+      </div>
+
+      <div class='messageLine contact'>
+        <p class='messageDetail contact'>Phone: </p>
+        <%= f.text_field :phone, :class => 'messageField contact'%>
+      </div>
+
+      <div class='messageLine contact'>
+      <p class='messageDetail contact'>Email: </p>
+      <%= f.text_field :email, :class => 'messageField contact'%>
+      </div>
+
+      <div class='messageLine contact'>
+        <p class='messageDetail contact'>Subject: </p>
+        <%= f.text_field :subject, :class => 'messageField contact'%>
+      </div>
+
+      <div class='messageLine contact'>
+        <p class='messageDetail contact'>Message: </p>
+        <%= f.text_area :message, :class => 'messageBody contact' %>
+      </div>
+
+      <div class='messageLine contact'>
+        <p class='messageDetail contact'>
+          <%= image_submit_tag("submit.png", :alt => "submit form", :class => 'submitButton') %>
+      </div>
 
   <% end %>
 
   </div>
 
-  <div class="containerRight">
+  <div class="container message contact">
 
 
-  <h3>Address and Contact Information</h3>
-  <h4 class="contactAddress">1520 2nd St <br>
+  <h3 class="contactHeader">Address & Contact Information</h3>
+  <h4 class="contactInfo">1520 2nd St <br>
       Santa Monica, CA 90401<br>
       United States</h4>
 
-  <h4 class="contactEmail"> addyproject1@gmail.com</h4>
-  <h4 class="contactPhone"> (877) 348-5665 </h4>
+  <h4 class="contactInfo"> addyproject1@gmail.com</h4>
+  <h4 class="contactInfo"> (877) 348-5665 </h4>
 
   <img src="https://maps.googleapis.com/maps/api/staticmap?center=1520%202ndStreet%20SantaMonica,%20CA&zoom=14&size=400x300" alt="image of General Assembly in Santa Monica" class="aboutMap"/>
   </div>
+
 </div>

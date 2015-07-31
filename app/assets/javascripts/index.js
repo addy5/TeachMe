@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
 
 
    $('.notice').delay(500).slideDown('normal', function() {
@@ -13,5 +13,6 @@ $(function() {
       $(this).delay(6000).slideUp(500);
    });
 
+   $('.notice1').on('click', function(){$(this).slideUp(500);});
 
 });

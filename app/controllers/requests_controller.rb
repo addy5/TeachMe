@@ -3,6 +3,10 @@ class RequestsController < ApplicationController
   def new
     @request = Request.new
     @post = params[:post_id]
+    unless session[:user_id]
+      flash[:notice1] = "You must be logged in to submit a request."
+      redirect_to "/posts/#{params[:post_id]}"
+    end
   end
 
   def create
@@ -14,9 +18,6 @@ class RequestsController < ApplicationController
     else
       render "/posts/<%=params[:post_id]%>/requests/new"
     end
-  end
-
-  def edit
   end
 
   def destroy
